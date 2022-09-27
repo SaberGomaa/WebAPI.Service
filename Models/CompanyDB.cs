@@ -11,7 +11,7 @@ namespace WebAPI.Service.Models
             : base(@"Data source = SABER;Initial catalog = companyDaBase;User Id = saber ; Password = 123456789 ;")
         {
             // To remove self reference loop for all models instead [JsonIgnore]
-            this.Configuration.LazyLoadingEnabled = false;
+            this.Configuration.LazyLoadingEnabled = true;
             this.Configuration.ProxyCreationEnabled = false;
         }
         public virtual DbSet<Employee> Employees { get; set; }
