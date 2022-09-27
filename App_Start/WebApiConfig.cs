@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web.Http;
@@ -10,13 +11,13 @@ namespace WebAPI.Service
         public static void Register(HttpConfiguration config)
         {
             // Web API configuration and services
-
             config.Formatters.Remove(config.Formatters.XmlFormatter);
-            
+
 
             // To remove self reference loop for all models instead [JsonIgnore]
-            config.Formatters.JsonFormatter.SerializerSettings.ReferenceLoopHandling 
-                = Newtonsoft.Json.ReferenceLoopHandling.Ignore;
+            //config.Formatters.JsonFormatter.SerializerSettings.ReferenceLoopHandling 
+            //    = ReferenceLoopHandling.Ignore;
+
 
             // Web API routes
             config.MapHttpAttributeRoutes();
@@ -27,5 +28,7 @@ namespace WebAPI.Service
                 defaults: new { id = RouteParameter.Optional }
             );
         }
+
+     
     }
 }
