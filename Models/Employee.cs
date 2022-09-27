@@ -1,7 +1,7 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Runtime.Serialization;
 using System.Web;
 
 namespace WebAPI.Service.Models
@@ -14,8 +14,8 @@ namespace WebAPI.Service.Models
         public int Age { get; set; }
         public decimal Salary { get; set; }
         public int DepartmentId { get; set; }
-        [IgnoreDataMember]
-        public  Department department { get; set; }
+        [JsonIgnore]
+        public virtual Department department { get; set; }
 
     }
 }
