@@ -19,7 +19,7 @@ namespace WebAPI.Service.Controllers
         // GET: api/Employee
         public IQueryable<Employee> GetEmployees()
         {
-            return db.Employees;
+            return db.Employees.Include(d=>d.department);
         }
 
         // GET: api/Employee/5

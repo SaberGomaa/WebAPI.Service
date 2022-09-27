@@ -14,7 +14,7 @@ namespace WebAPI.Service.Models
         public int Age { get; set; }
         public decimal Salary { get; set; }
         public int DepartmentId { get; set; }
-        [JsonIgnore]
+        //[JsonIgnore]
         public virtual Department department { get; set; }
 
     }
