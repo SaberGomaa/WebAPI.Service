@@ -12,6 +12,11 @@ namespace WebAPI.Service
             // Web API configuration and services
 
             config.Formatters.Remove(config.Formatters.XmlFormatter);
+            
+
+            // To remove self reference loop for all models instead [JsonIgnore]
+            config.Formatters.JsonFormatter.SerializerSettings.ReferenceLoopHandling 
+                = Newtonsoft.Json.ReferenceLoopHandling.Ignore;
 
             // Web API routes
             config.MapHttpAttributeRoutes();

@@ -11,7 +11,7 @@ namespace WebAPI.Service.Models
         public int DepartmentId { get; set; }
         public string Name { get; set; }
 
-        [JsonIgnore]
+        //[JsonIgnore]
         public virtual ICollection<Employee> Employees { get; set; } 
             = new HashSet<Employee>();
     }
